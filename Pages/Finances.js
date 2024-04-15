@@ -9,8 +9,6 @@ const Finances = ({ finances, onDelete }) => {
  
 
     return (
-        <Layout>
-            
-        </Layout>
+        
     )
 }
