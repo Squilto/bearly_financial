@@ -11,13 +11,23 @@ datasource db {
 }
 
 model User {
-    id       String @id @default(auto()) @map("_id") @db.ObjectId
-    username String?
-    budget Float?
-    rent Float?
-    utilities Float?
-    food Float?
-    living Float?
-    misc Float?
-    income Float?
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  username  String?
+  budget    Float?
+  rent      Float?
+  utilities Float?
+  food      Float?
+  living    Float?
+  misc      Float?
+  income    Float?
+  Record    Record[]
+}
+
+model Record {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  user   User   @relation(fields: [userID], references: [id])
+  userID String @db.ObjectId
+  transaction String
+  created DateTime @default(now())
+  amount Float
 }
