@@ -11,10 +11,10 @@ const Home = ({children}) => {
   const [user] = useAuthState(auth);
   const router = useRouter()
   const userSession = sessionStorage.getItem('user');
-  const emailhold = sessionStorage.getItem('email');
+  const emailHold = sessionStorage.getItem('email');
 
   console.log(userSession)
-  console.log(emailhold)
+  console.log(emailHold)
    if (!user && !userSession){
     router.push('/sign-in')
   }
