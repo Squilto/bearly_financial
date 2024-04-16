@@ -8,7 +8,7 @@ import { signOut } from 'firebase/auth';
 const Footer = () => {
     const [user] = useAuthState(auth);
     const router = useRouter()
-
+//logout button+company about
     return (
         <div className="bg-yellow-950 py-2 w-full fixed bottom-0 border border-gray-600">
             <button onClick={() => {

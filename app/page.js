@@ -19,19 +19,13 @@ const Home = () => {
     router.push('/sign-in')
   }
   //THE FIRST DIV IS LOAD BEARING, DO NOT REMOVE
+  //basic main page
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
       </div>
-      <h1>Welcome to Bearly Financial, your firendly neighborhood Bear you can Bank on!</h1>
-      <button onClick={() => {
-        signOut(auth)
-        sessionStorage.removeItem('user')
-        sessionStorage.removeItem('email')
-        router.push('/sign-in')
-        }}>
-        Log out
-      </button>
+      greeting, please click financial calculator to begin
+      <div></div>
     </main>
   );
 }

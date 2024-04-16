@@ -9,7 +9,7 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
   const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
   const router = useRouter()
-
+//handles login input which is called when sign in button is pushed, redirects to main page
   const handleSignIn = async () => {
     try {
         const res = await signInWithEmailAndPassword(email, password);
@@ -23,7 +23,7 @@ const SignIn = () => {
         console.error(e)
     }
   };
-
+//sign-in information form+button
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
       <div className="bg-gray-800 p-10 rounded-lg shadow-xl w-96">
@@ -48,7 +48,7 @@ const SignIn = () => {
         >
           Sign In
         </button>
-      
+      {/*the sign in button in question, takes from the above inputs*/}
       <button onClick={() => {
         router.push('/sign-up')
         }}>

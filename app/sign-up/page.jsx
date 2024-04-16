@@ -9,7 +9,7 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
-
+//handles sign-up when button pushed, also signs in user and redirects to main page
   const handleSignUp = async () => {
     try {
         const res = await createUserWithEmailAndPassword(email, password)
@@ -23,7 +23,7 @@ const SignUp = () => {
         console.error(e)
     }
   };
-
+//form for the sign-up function info
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
       <div className="bg-gray-800 p-10 rounded-lg shadow-xl w-96">
@@ -42,6 +42,7 @@ const SignUp = () => {
           onChange={(e) => setPassword(e.target.value)} 
           className="w-full p-3 mb-4 bg-gray-700 rounded outline-none text-white placeholder-gray-500"
         />
+        {/*sign-up button, takes info from above inputs*/}
         <button 
           onClick={handleSignUp}
           className="w-full p-3 bg-indigo-600 rounded text-white hover:bg-indigo-500"
