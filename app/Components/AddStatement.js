@@ -17,8 +17,6 @@ const AddStatement = () => {
     e.preventDefault();
 
     // Here, you can handle the submission logic, such as sending the data to your backend or storing it locally.
-
-    // For example, you can alert the user with the entered values:
     alert(JSON.stringify(input));
 
     // Then, reset the input fields and close the modal

@@ -23,7 +23,6 @@ const Home = () => {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
       </div>
-<<<<<<< HEAD
       <h1>Welcome to Bearly Financial, your firendly neighborhood Bear you can Bank on!</h1>
       <button onClick={() => {
         signOut(auth)
@@ -33,10 +32,6 @@ const Home = () => {
         }}>
         Log out
       </button>
-=======
-      what?
-      <dvi></dvi>
->>>>>>> a665c17255749819a4e6654c884027da8718fdd5
     </main>
   );
 }
