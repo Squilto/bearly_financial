@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 'use react'
 import { useState } from 'react';
 
@@ -36,7 +35,3 @@ const Calculator = () => {
 };
 
 export default Calculator;
-=======
-import { useState, useEffect } from "react";
-
->>>>>>> dd19d7ea53e8a3af439dc5c02ea4a14a21b3de78
