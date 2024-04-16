@@ -14,9 +14,9 @@ const Home = ({children}) => {
   console.log(userSession)
  
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col m-auto items-center justify-between p-24">
       <Header></Header>
-      <div>
+      <div className="bg-yellow-800 max-m flex-col justify-between flex-center">
         {children}
       </div>
       <button onClick={() => {
