@@ -7,7 +7,7 @@ import { auth } from "./firebase/config";
 import { signOut } from 'firebase/auth';
 
 
-const Home = ({children}) => {
+const Home = () => {
   const [user] = useAuthState(auth);
   const router = useRouter()
   const userSession = sessionStorage.getItem('user');
@@ -18,12 +18,12 @@ const Home = ({children}) => {
    if (!user && !userSession){
     router.push('/sign-in')
   }
+  //THE FIRST DIV IS LOAD BEARING, DO NOT REMOVE
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Header></Header>
       <div>
-        {children}
       </div>
+      what?
       <button onClick={() => {
         signOut(auth)
         sessionStorage.removeItem('user')
@@ -32,7 +32,6 @@ const Home = ({children}) => {
         }}>
         Log out
       </button>
-      <Footer></Footer>
     </main>
   );
 }

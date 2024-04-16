@@ -19,9 +19,10 @@ const Calculator = () => {
       setResult('Error');
     }
   };
-
+//i don't know why the first empty div is important but it makes whatever is next show up so
   return (
-    <div>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div></div>
       <h1>Calculator</h1>
       <input
         type="text"
@@ -31,7 +32,7 @@ const Calculator = () => {
       />
       <button onClick={handleCalculate}>Calculate</button>
       <div>Result: {result}</div>
-    </div>
+    </main>
   );
 };
 
