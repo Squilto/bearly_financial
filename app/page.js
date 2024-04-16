@@ -17,18 +17,6 @@ export function ForceLog() {
     router.push('/sign-in')
   }
   
-
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <button onClick={() => {
-        signOut(auth)
-        sessionStorage.removeItem('user')
-        router.push('/sign-in')
-        }}>
-        Log out
-      </button>
-    </main>
-  )
 }
 
 const Home = ({children}) => {
@@ -39,7 +27,13 @@ const Home = ({children}) => {
       <div>
         {children}
       </div>
-      <ForceLog></ForceLog>
+      <button onClick={() => {
+        signOut(auth)
+        sessionStorage.removeItem('user')
+        router.push('/sign-in')
+        }}>
+        Log out
+      </button>
       <Footer></Footer>
     </main>
   );
