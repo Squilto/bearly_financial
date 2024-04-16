@@ -11,8 +11,10 @@ const Home = ({children}) => {
   const [user] = useAuthState(auth);
   const router = useRouter()
   const userSession = sessionStorage.getItem('user');
+  const emailhold = sessionStorage.getItem('email');
 
   console.log(userSession)
+  console.log(emailhold)
    if (!user && !userSession){
     router.push('/sign-in')
   }
@@ -25,6 +27,7 @@ const Home = ({children}) => {
       <button onClick={() => {
         signOut(auth)
         sessionStorage.removeItem('user')
+        sessionStorage.removeItem('email')
         router.push('/sign-in')
         }}>
         Log out

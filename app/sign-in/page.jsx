@@ -15,6 +15,7 @@ const SignIn = () => {
         const res = await signInWithEmailAndPassword(email, password);
         console.log({res});
         sessionStorage.setItem('user', true)
+        sessionStorage.setItem('email', email)
         setEmail('');
         setPassword('');
         router.push('/')
