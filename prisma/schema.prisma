@@ -12,7 +12,7 @@ datasource db {
 
 model User {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  username  String
+  email     String   @unique
   budget    Float?
   rent      Float?
   utilities Float?
@@ -24,10 +24,10 @@ model User {
 }
 
 model Record {
-  id     String @id @default(auto()) @map("_id") @db.ObjectId
-  user   User   @relation(fields: [userID], references: [id])
-  userID String @db.ObjectId
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  user        User     @relation(fields: [userID], references: [id])
+  userID      String   @db.ObjectId
   transaction String
-  created DateTime @default(now())
-  amount Float
+  created     DateTime @default(now())
+  amount      Float
 }
