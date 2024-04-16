@@ -47,6 +47,12 @@ const SignIn = () => {
         >
           Sign In
         </button>
+      
+      <button onClick={() => {
+        router.push('/sign-up')
+        }}>
+        Sign Up (redirect)
+      </button>
       </div>
     </div>
   );
