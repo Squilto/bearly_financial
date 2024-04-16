@@ -1,9 +1,9 @@
-'use react'
-import { useState } from 'react';
+"use react";
+import { useState } from "react";
 
 const Calculator = () => {
-  const [input, setInput] = useState('');
-  const [result, setResult] = useState('');
+  const [input, setInput] = useState("");
+  const [result, setResult] = useState("");
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
@@ -15,7 +15,7 @@ const Calculator = () => {
       const calculatedResult = eval(input);
       setResult(calculatedResult);
     } catch (error) {
-      setResult('Error');
+      setResult("Error");
     }
   };
 
