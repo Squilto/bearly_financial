@@ -23,7 +23,7 @@ const Home = () => {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
       </div>
-      what?
+      <h1>Welcome to Bearly Financial, your firendly neighborhood Bear you can Bank on!</h1>
       <button onClick={() => {
         signOut(auth)
         sessionStorage.removeItem('user')

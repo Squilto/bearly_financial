@@ -5,7 +5,6 @@ import Layout from '../app/layout.js'
 // Modal component
 const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
-
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex justify-center items-center">
       <div className="bg-white p-8 rounded-lg">
@@ -19,7 +18,7 @@ const Modal = ({ isOpen, onClose }) => {
 
 export default function Finances() {
   // State to control modal visibility
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Function to open modal
   const openModal = () => {

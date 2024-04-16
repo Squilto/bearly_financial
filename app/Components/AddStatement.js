@@ -1,93 +1,70 @@
-import React, { useState } from "react";
+import React from "react";
+import Modal from "./Modal";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-const Modal = ({ showModal, setShowModal, addRecord }) => {
-  const [input, setInput] = useState({
-    budget: "",
-    rent: "",
-    utilities: "",
-    food: "",
-    living: "",
-    misc: "",
-  });
+const AddStatement = () => {
+  const Router = useRouter();
+  const [showModal, setShowModal] = useState(false);
+  const [input, setInput] = useState({ budget: '', rent: '', utilities: '', food: '', living: '', misc: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setInput((prevInput) => ({ ...prevInput, [name]: value }));
+    setInput(prevState => ({ ...prevState, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addRecord(input);
+
+    // Here, you can handle the submission logic, such as sending the data to your backend or storing it locally.
+
+    // For example, you can alert the user with the entered values:
+    alert(JSON.stringify(input));
+
+    // Then, reset the input fields and close the modal
+    setInput({ budget: '', rent: '', utilities: '', food: '', living: '', misc: '' });
     setShowModal(false);
   };
 
   return (
     <>
+      {/* Button to open the modal */}
+      <button onClick={() => setShowModal(true)}>Add Financial Record</button>
+      
+      {/* Modal for adding financial record */}
       {showModal && (
-        <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white p-8 rounded-lg">
-            <h2 className="text-lg font-semibold mb-4">Add Statement</h2>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="budget"
-                value={input.budget}
-                onChange={handleChange}
-                placeholder="Budget"
-                className="mb-2"
-              />
-              <input
-                type="text"
-                name="rent"
-                value={input.rent}
-                onChange={handleChange}
-                placeholder="Rent"
-                className="mb-2"
-              />
-              <input
-                type="text"
-                name="utilities"
-                value={input.utilities}
-                onChange={handleChange}
-                placeholder="Utilities"
-                className="mb-2"
-              />
-              <input
-                type="text"
-                name="food"
-                value={input.food}
-                onChange={handleChange}
-                placeholder="Food"
-                className="mb-2"
-              />
-              <input
-                type="text"
-                name="living"
-                value={input.living}
-                onChange={handleChange}
-                placeholder="Living"
-                className="mb-2"
-              />
-              <input
-                type="text"
-                name="misc"
-                value={input.misc}
-                onChange={handleChange}
-                placeholder="Misc"
-                className="mb-4"
-              />
-              <button
-                type="submit"
-                className="bg-blue-500 text-white px-4 py-2 rounded-md"
-              >
-                Add Record
-              </button>
-            </form>
-          </div>
-        </div>
+        <Modal closeModal={() => setShowModal(false)}>
+          <form onSubmit={handleSubmit}>
+            <label>
+              Budget:
+              <input type="text" name="budget" value={input.budget} onChange={handleChange} />
+            </label>
+            <label>
+              Rent:
+              <input type="text" name="rent" value={input.rent} onChange={handleChange} />
+            </label>
+            <label>
+              Utilities:
+              <input type="text" name="utilities" value={input.utilities} onChange={handleChange} />
+            </label>
+            <label>
+              Food:
+              <input type="text" name="food" value={input.food} onChange={handleChange} />
+            </label>
+            <label>
+              Living:
+              <input type="text" name="living" value={input.living} onChange={handleChange} />
+            </label>
+            <label>
+              Misc:
+              <input type="text" name="misc" value={input.misc} onChange={handleChange} />
+            </label>
+            <button type="submit">Submit</button>
+          </form>
+        </Modal>
       )}
     </>
   );
 };
 
-export default Modal;
+export default AddStatement;
