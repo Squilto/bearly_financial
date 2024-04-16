@@ -1,6 +1,7 @@
-"use client"
+'use client'
 import React from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Header = () => {
     const router = useRouter()
@@ -19,9 +20,9 @@ const Header = () => {
 
             <div className="text-gray flex-right">
                 <ul>
-                    <button href="/Finances.js">
-                        <a>Financial Calculator</a>
-                    </button>
+                    <Link href="/finances">
+                        Financial Calculator
+                    </Link>
                     <button onClick={() => {
                         router.push('/finances')
                      }}>
