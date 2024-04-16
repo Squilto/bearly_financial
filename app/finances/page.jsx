@@ -1,7 +1,7 @@
 'use react'
 'use client'
 import { useState } from 'react';
-
+//jhgfjgh
 const Calculator = () => {
   const [input, setInput] = useState('');
   const [result, setResult] = useState('');
