@@ -24,14 +24,7 @@ const Home = () => {
       <div>
       </div>
       what?
-      <button onClick={() => {
-        signOut(auth)
-        sessionStorage.removeItem('user')
-        sessionStorage.removeItem('email')
-        router.push('/sign-in')
-        }}>
-        Log out
-      </button>
+      <dvi></dvi>
     </main>
   );
 }
